@@ -1,2 +1,1 @@
-export { RestHttpClientModule }   from './http.module';
-export { RestHttpClient }   from './http.service';
+import { StringPipesModule } from './pipes/string';
