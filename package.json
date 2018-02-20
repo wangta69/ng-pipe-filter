@@ -1,6 +1,6 @@
 {
   "name": "ng-pipe-filter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "pipes and filters for angular",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,6 +8,7 @@
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",
+    "@angular/platform-browser": "^5.2.5",
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
@@ -27,8 +28,8 @@
     "url": "git+https://github.com/wangta69//ng-pipe-filter.git"
   },
   "keywords": [
-    "http",
-    "httpClient",
+    "pipes",
+    "filters",
     "angular"
   ],
   "author": "pondol",

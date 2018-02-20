@@ -1,5 +1,7 @@
-import {is_string} from './is-string.func';
+//https://github.com/fknop/angular-pipes/blob/master/src/string/index.ts
 
+import {is_string} from './is-string.func';
+import {is_object} from './is-object.func';
 
 export type CollectionPredicate = (item?: any, index?: number, collection?: any[]) => boolean;
 /*
@@ -46,11 +48,12 @@ export function isString (value: any): value is string {
   return typeof value === 'string';
 }
 */
+/*
 export function isObject (value: any): boolean {
 
   return typeof value === 'object';
 }
-
+*/
 export function isArray (value: any): boolean {
 
   return Array.isArray(value);
@@ -178,7 +181,7 @@ export function flatten (input: any[], index: number = 0): any[] {
 
 export function getProperty (value: { [key: string]: any}, key: string): any {
 
-  if (isNil(value) || !isObject(value)) {
+  if (isNil(value) || !is_object(value)) {
     return undefined;
   }
 
@@ -186,7 +189,7 @@ export function getProperty (value: { [key: string]: any}, key: string): any {
   let result: any = value[keys.shift()!];
 
   for (const key of keys) {
-    if (isNil(result) || !isObject(result)) {
+    if (isNil(result) || !is_object(result)) {
       return undefined;
     }
 
@@ -292,11 +295,11 @@ export class DeepWrapper {
 
 export function count (input: any): any {
 
-  if (!isArray(input) && !isObject(input) && !is_string(input)) {
+  if (!isArray(input) && !is_object(input) && !is_string(input)) {
     return input;
   }
 
-  if (isObject(input)) {
+  if (is_object(input)) {
     return Object.keys(input).map((value) => input[value]).length;
   }
 

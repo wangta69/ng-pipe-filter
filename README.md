@@ -5,3 +5,28 @@ Tested for angular5
 ```
 npm install ng-pipe-filter
 ```
+
+
+## How to use
+
+### imports all pipe modules
+``` app.module.ts
+import { StringPipesModule } from 'ng-pipe-filter'
+@NgModule({
+    imports: [ StringPipesModule ]
+})
+```
+
+### imports partial pipe modules
+``` app.module.ts
+import { PipesFiltersModule } from 'ng-pipe-filter'
+@NgModule({
+    imports: [ PipesFiltersModule ]
+})
+```
+
+## StringPipesModule
+### Nl2brPipe
+- change newline to br tag
+### stripTags
+- remove html tag
