@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 
-import { StringPipesModule } from './pipes/string';
+import { BooleanPipesModule } from './pipes/bool';
+import { MathPipesModule } from './pipes/math';
 import { ObjectPipesModule } from './pipes/object';
+import { StringPipesModule } from './pipes/string';
 
 @NgModule({
   exports: [
-    StringPipesModule,
-    ObjectPipesModule
+    BooleanPipesModule,
+    MathPipesModule,
+    ObjectPipesModule,
+    StringPipesModule
   ]
 })
 export class PipesFiltersModule {}
 
-
-export * from './pipes/string';
+export * from './pipes/bool';
+export * from './pipes/math';
 export * from './pipes/object';
+export * from './pipes/string';

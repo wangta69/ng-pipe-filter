@@ -1,6 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-//import {isString, isUndefined} from '../utils/utils';
 
 @Pipe({name: 'nl2br'})
 export class Nl2brPipe implements PipeTransform {
