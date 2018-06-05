@@ -14,8 +14,3 @@ import { StringPipesModule } from './pipes/string';
   ]
 })
 export class PipesFiltersModule {}
-
-export * from './pipes/bool';
-export * from './pipes/math';
-export * from './pipes/object';
-export * from './pipes/string';
