@@ -8,9 +8,9 @@ export class CommaRemovePipe implements PipeTransform {
 
   transform(input: string): any {
 
-    if (is_undefined(input))
-    return input;
-
-    return input.toString().replace(/,/g , "");
+    if (is_undefined(input)) {
+        return input;
+    }
+    return input.toString().replace(/,/g , '');
   }
 }

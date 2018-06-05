@@ -5,11 +5,10 @@ import {only_number} from '../../functions/only-number.func';
   name: 'only_number'
 })
 export class OnlyNumberPipe implements PipeTransform {
-
-  transform(input: string): boolean {
-      if (is_undefined(input))
-      return false;
-
-    return only_number(input);
-  }
+    transform(input: string): boolean {
+        if (is_undefined(input)) {
+            return false;
+        }
+        return only_number(input);
+    }
 }

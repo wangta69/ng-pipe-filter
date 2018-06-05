@@ -1,4 +1,4 @@
-//https://github.com/fknop/angular-pipes/blob/master/src/string/index.ts
+// https://github.com/fknop/angular-pipes/blob/master/src/string/index.ts
 
 import {is_string} from './is-string.func';
 import {is_object} from './is-object.func';
@@ -135,7 +135,7 @@ export function toString (value: number|string) {
   return `${value}`;
 }
 
-export function pad (str: string, len: number = 0, ch: any = ' '): string{
+export function pad (str: string, len = 0, ch: any = ' '): string {
 
   str = String(str);
   ch = toString(ch);
@@ -150,8 +150,7 @@ export function pad (str: string, len: number = 0, ch: any = ' '): string{
 
     if (left) {
       str = leftPad(str, l, ch);
-    }
-    else {
+    } else {
       str = rightPad(str, l, ch);
     }
 
@@ -186,14 +185,14 @@ export function getProperty (value: { [key: string]: any}, key: string): any {
   }
 
   const keys: string[] = key.split('.');
-  let result: any = value[keys.shift()!];
-
-  for (const key of keys) {
+  // let result: any = value[keys.shift()!]; // forbidden non null assertion
+   let result: any;
+  for (const k of keys) {
     if (isNil(result) || !is_object(result)) {
       return undefined;
     }
 
-    result = result[key];
+    result = result[k];
   }
 
   return result;
@@ -256,7 +255,7 @@ export function deepEqual (a: any, b: any) {
   }
 
   // Test for A's keys different from B.
-  var hasOwn = Object.prototype.hasOwnProperty;
+  const hasOwn = Object.prototype.hasOwnProperty;
   for (let i = 0; i < keysA.length; i++) {
     const key = keysA[i];
     if (!hasOwn.call(b, keysA[i]) || !deepEqual(a[key], b[key])) {
@@ -274,7 +273,7 @@ export function isDeepObject (object: any) {
 
 export function wrapDeep (object: any) {
 
-  return new DeepWrapper(object);
+  // return new DeepWrapper(object);
 }
 
 export function unwrapDeep (object: any) {
@@ -288,7 +287,7 @@ export function unwrapDeep (object: any) {
 
 export class DeepWrapper {
 
-  public __isDeepObject__: boolean = true;
+  public __isDeepObject__ = true;
 
   constructor (public data: any) {}
 }

@@ -7,11 +7,10 @@ import {is_undefined} from '../../functions/is-undefined.func';
 })
 export class StripTagsPipe implements PipeTransform {
 
-  transform(input: string): any {
-
-    if (!is_string(input) || is_undefined(input))
-    return input;
-
-    return input.replace(/<\S[^><]*>/g, '');
-  }
+    transform(input: string): any {
+        if (!is_string(input) || is_undefined(input)) {
+            return input;
+        }
+        return input.replace(/<\S[^><]*>/g, '');
+    }
 }

@@ -8,15 +8,16 @@ import {is_object} from '../../functions/is-object.func';
 */
 @Pipe({ name: 'to_key' })
 export class ToKeyPipe implements PipeTransform {
-
-    transform(input) : any {
-        if (!is_object(input))
-          return input;
-
-      let keys = [];
-      for (let key in input) {
-        keys.push(key);
-      }
-      return keys;
+    transform(input): any {
+        if (!is_object(input)) {
+            return input;
+        }
+        const keys = [];
+        for (const key in input) {
+            if (input.hasOwnProperty(key)) {
+                keys.push(key);
+            }
+        }
+        return keys;
     }
 }
