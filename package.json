@@ -1,9 +1,7 @@
 {
   "name": "ng-pipe-filter",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
   },
   "description": "pipes and filters for angular",
   "main": "karma.conf.js",

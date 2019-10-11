@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { OnlyNumberPipe } from './only-number.pipe';
+import { OnlyNumberPipe } from './bool/only-number.pipe';
 
-export * from './only-number.pipe';
+export * from './bool/only-number.pipe';
 
 @NgModule({
   declarations: [

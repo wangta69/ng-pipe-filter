@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-
-import { RangePipe } from './range.pipe';
-
-export * from './range.pipe';
+import { RangePipe } from './math/range.pipe';
+export * from './math/range.pipe';
 
 @NgModule({
   declarations: [
