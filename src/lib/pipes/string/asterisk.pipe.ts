@@ -1,15 +1,11 @@
 import { Pipe, PipeTransform, NgModule } from '@angular/core';
-declare var graphGame: any;
+declare var aa: any;
 @Pipe({
   name: 'asterisk'
 })
 export class AsteriskPipe implements PipeTransform {
-  transform(value: string): string {
-    if (graphGame.serviceInfo.asterisk) {
-        return value.substr(0, 1) + Array(value.length).join('*');
-    } else {
-        return value;
-    }
+  transform(value: string, len: number): string {
+    return value.substr(0, len) + Array(value.length).join('*');
   }
 }
 
